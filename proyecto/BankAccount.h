@@ -18,5 +18,7 @@ class BankAccount{
         BankAccount(std::string account_number, std::string account_holder_name, double balance);
         virtual void deposit(double amount); 
         virtual void withdraw(double amount); 
-        std::string to_string(); 
+        std::string to_string() const; 
 };
+
+std::ostream& operator<<(std::ostream& os, const BankAccount& b);

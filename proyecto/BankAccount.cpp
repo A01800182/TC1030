@@ -34,11 +34,16 @@ void BankAccount::withdraw(double amount)
         this->_balance -= amount; 
 }
 
-std::string BankAccount::to_string()
+std::string BankAccount::to_string() const
 {
     long int ibalance = (this->_balance * 100);
     double dbalance = 1.00/100.00 * ibalance; 
     return "Número de cuenta: " + this->_account_number 
         + "\nTitular de la cuenta: " + this->_account_holder_name
         + "\nSaldo: $" + std::to_string(dbalance) + "\n";
+}
+
+std::ostream& operator<<(std::ostream& os, const BankAccount& b)
+{
+    return os << b.to_string();
 }
