@@ -11,6 +11,9 @@
 #include <vector>
 // Incluir aquí las definiciones de las clases:
 // BankAccount, SavingsAccount y CheckingAccount
+#include "BankAccount.h"
+#include "SavingsAccount.h"
+#include "CheckingAccount.h"
 
 int main()
 {
