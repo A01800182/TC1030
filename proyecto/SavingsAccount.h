@@ -6,7 +6,6 @@
 //          A01800935 Miranda Martínez Jiménez.
 // ----------------------------------------------------------
 #pragma once
-
 #include "BankAccount.h"
 
 class SavingsAccount : public BankAccount {
@@ -17,5 +16,3 @@ public:
     void deposit(double amount) override;
     void withdraw(double amount) override;
 };
-
-

@@ -5,7 +5,6 @@
 //          A01800182 Daniel Alvarez Sil.
 //          A01800935 Miranda Martínez Jiménez.
 // ----------------------------------------------------------
-
 #include "SavingsAccount.h"
 #include <stdexcept>
 
@@ -16,7 +15,7 @@ void SavingsAccount::deposit(double amount) {
     if (amount <= 0) {
         throw std::invalid_argument("El monto del depósito no puede ser negativo.");
     }
-    _balance += amount;
+    BankAccount::deposit(amount);
     _balance += _balance * (_interest_rate / 100);
 }
 
@@ -27,7 +26,7 @@ void SavingsAccount::withdraw(double amount) {
     if (amount > _balance) {
         throw std::runtime_error("Fondos insuficientes en la cuenta de ahorros");
     }
-    _balance -= amount;
+    BankAccount::withdraw(amount);
 }
 
 
