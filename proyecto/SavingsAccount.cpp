@@ -18,8 +18,8 @@ void SavingsAccount::deposit(double amount) {
         throw std::invalid_argument("Error: El monto del depósito no puede ser cero.");
     }
     BankAccount::deposit(amount);  
-    _balance += _balance * (_interest_rate / 100);  
-}
+    _balance += _balance * (_interest_rate / 100); 
+
 
 void SavingsAccount::withdraw(double amount) {
     if (amount < 0) {
@@ -29,6 +29,5 @@ void SavingsAccount::withdraw(double amount) {
         throw std::runtime_error("Fondos insuficientes en la cuenta de ahorros.");
     }
     BankAccount::withdraw(amount);  
-
-
-
+}
+}
