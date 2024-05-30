@@ -28,7 +28,7 @@ void BankAccount::deposit(double amount)
 
 void BankAccount::withdraw(double amount)
 {
-    if (this->_balance - amount < 0)
+    if (this->_balance - amount <= 0)
         throw std::invalid_argument("Error: Fondos insuficientes en la cuenta para realizar el retiro. \n");
     else 
         this->_balance -= amount; 
