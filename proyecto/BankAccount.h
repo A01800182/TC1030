@@ -8,11 +8,13 @@
 
 #pragma once 
 #include <string>
+#include <stdexcept>
 
 class BankAccount{
     private: 
         std::string _account_number; 
         std::string _account_holder_name; 
+    protected: 
         double _balance; 
     public: 
         BankAccount(std::string account_number, std::string account_holder_name, double balance);

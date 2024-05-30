@@ -7,7 +7,6 @@
 // ----------------------------------------------------------
 
 #include "BankAccount.h"
-#include <stdexcept>
 
 BankAccount::BankAccount(std::string account_number, std::string account_holder_name, double balance)
 {
@@ -19,18 +18,27 @@ BankAccount::BankAccount(std::string account_number, std::string account_holder_
 void BankAccount::deposit(double amount)
 {
     if (amount < 0)
-        throw std::invalid_argument("Error: El monto del depósito no puede ser negativo. \n");
+        throw std::invalid_argument("El monto del depósito no puede ser negativo. ");
     else if (amount == 0)
-        throw std::invalid_argument("Error: El monto del depósito no puede ser cero. \n");
+        throw std::invalid_argument("El monto del depósito no puede ser cero. ");
     else 
         this->_balance += amount; 
 }
 
 void BankAccount::withdraw(double amount)
 {
-    if (this->_balance - amount <= 0)
-        throw std::invalid_argument("Error: Fondos insuficientes en la cuenta para realizar el retiro. \n");
-    else 
+    // if (this->_balance - amount <= 0)
+    //     throw std::invalid_argument("Fondos insuficientes en la cuenta para realizar el retiro. ");
+    // else if (amount < 0)
+    //     throw std::invalid_argument("El monto del retiro no puede ser negativo. ");
+    // else if (amount == 0)
+    //     throw std::invalid_argument("Error: El monto del retiro no puede ser cero. ");
+    // else
+    if (amount < 0) 
+        throw std::invalid_argument("El monto del retiro no puede ser negativo. ");
+    else if (amount == 0)
+        throw std::invalid_argument("El monto del retiro no puede ser cero. ");
+    else
         this->_balance -= amount; 
 }
 
