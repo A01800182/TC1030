@@ -9,6 +9,7 @@
 #pragma once 
 #include <string>
 #include <stdexcept>
+#include <cmath>
 
 class BankAccount{
     private: 

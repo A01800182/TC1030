@@ -44,12 +44,12 @@ void BankAccount::withdraw(double amount)
 
 std::string BankAccount::to_string() const
 {
-    long int ibalance = static_cast<int>(this->_balance);
-    long int dbalance = 100 * (this->_balance - ibalance); 
+   long int ibalance = static_cast<int>(this->_balance);
+    long int dbalance = std::ceil(1000 * (this->_balance - ibalance))/10;
     std::string sbalance = "00";
     if (dbalance != 0)
-        sbalance = std::to_string(dbalance); 
-    return "Número de cuenta: " + this->_account_number 
+        sbalance = std::to_string(dbalance);
+    return "Número de cuenta: " + this->_account_number
         + "\nTitular de la cuenta: " + this->_account_holder_name
         + "\nSaldo: $" + std::to_string(ibalance) + "." + sbalance + "\n";
 }
